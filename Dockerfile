@@ -3,7 +3,7 @@ FROM rust:slim-bullseye AS builder
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get -y install build-essential pkg-config curl unzip
  
-ARG LIBRESPOT_VERSION=0.4.0
+ARG LIBRESPOT_VERSION=0.4.1
 
 RUN cargo install librespot --version "${LIBRESPOT_VERSION}" --no-default-features
 
