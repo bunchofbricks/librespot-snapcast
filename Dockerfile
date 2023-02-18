@@ -12,7 +12,7 @@ FROM debian:bullseye-slim
 COPY --from=builder /usr/local/cargo/bin/librespot /usr/local/bin/
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y \
 && apt-get install -y wget alsa-utils \
-&& wget https://github.com/badaix/snapcast/releases/download/v0.26.0/snapserver_0.27.0-1_amd64.deb -O snapcast-server.deb \
+&& wget https://github.com/badaix/snapcast/releases/download/v0.27.0/snapserver_0.27.0-1_amd64.deb -O snapcast-server.deb \
 && apt-get install -y ./snapcast-server.deb \
 && apt-get clean && rm -fR /var/lib/apt/lists
 CMD ["/usr/bin/snapserver"]
