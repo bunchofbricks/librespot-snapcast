@@ -10,7 +10,7 @@ FROM debian:bookworm-slim
 COPY --from=builder /usr/local/cargo/bin/librespot /usr/local/bin/
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y \
 && apt-get install -y wget alsa-utils \
-&& wget https://github.com/badaix/snapcast/releases/download/v0.29.0/snapserver_0.29.0-1_amd64_bookworm.deb \
-&& apt-get install -y ./snapserver_0.29.0-1_amd64_bookworm.deb \
+&& wget https://github.com/badaix/snapcast/releases/download/v0.30.0/snapserver_0.30.0-1_amd64_bookworm.deb \
+&& apt-get install -y ./snapserver_0.30.0-1_amd64_bookworm.deb \
 && apt-get clean && rm -fR /var/lib/apt/lists
 CMD ["/usr/bin/snapserver"]
