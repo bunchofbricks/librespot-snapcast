@@ -1,6 +1,6 @@
 # Build librespot with cargo in builder stage
 FROM rust:slim-trixie AS builder
-ARG LIBRESPOT_VERSION=0.7.1
+ARG LIBRESPOT_VERSION=0.8.0
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get full-upgrade -y \
 && apt-get install -y libasound2-dev pkg-config libssl-dev
 RUN cargo install librespot --version "${LIBRESPOT_VERSION}"
